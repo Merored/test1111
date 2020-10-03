@@ -15,7 +15,8 @@ class CustomerController extends ApiController
         if (!isset($input['search_str']) || $input['search_str'] == '') {
             return response()->json($customers->orderBy('id', 'desc')->paginate(25));
         }
-
+        
+        $input['search_str'] = preg_quote($input['search_str']);
         //Меняем все пробелы на палки чтобы получился регексп 
         $regexpStr = str_replace(' ', '|', $input['search_str']);
 
