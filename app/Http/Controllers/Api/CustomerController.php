@@ -12,7 +12,7 @@ class CustomerController extends ApiController
     {   
         $input = $req->input();
         $customers = new Customer;
-        if (!isset($input['search_str'])) {
+        if (!isset($input['search_str']) || $input['search_str'] == '') {
             return response()->json($customers->orderBy('id', 'desc')->paginate(25));
         }
 

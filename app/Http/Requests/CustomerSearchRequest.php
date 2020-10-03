@@ -23,6 +23,7 @@ class CustomerSearchRequest extends FormRequest
      */
     public function rules()
     {
+        //Нужно чтобы не писали слишком большие строки для поиска, чтобы серверт точно не лёг
         return [
             'search_str' => 'max:255',
         ];
