@@ -36,7 +36,7 @@
             },
             {
                 key: 'surname',
-                label: 'Фавмилия',
+                label: 'Фамилия',
             },
             {
                 key: 'country',
